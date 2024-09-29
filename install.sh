@@ -331,10 +331,10 @@ main() {
         msg warn "${yellow}本地获取安装脚本 > $PWD ${none}"
     }
 
-    timedatectl set-ntp true &>/dev/null
-    [[ $? != 0 ]] && {
-        msg warn "${yellow}\e[4m提醒!!! 无法设置自动同步时间, 可能会影响使用 VMess 协议.${none}"
-    }
+    # timedatectl set-ntp true &>/dev/null
+    # [[ $? != 0 ]] && {
+    #     msg warn "${yellow}\e[4m提醒!!! 无法设置自动同步时间, 可能会影响使用 VMess 协议.${none}"
+    # }
 
     # install dependent pkg
     install_pkg $is_pkg &
@@ -419,9 +419,9 @@ main() {
     msg ok "生成配置文件..."
 
     # create systemd service
-    load systemd.sh
-    is_new_install=1
-    install_service $is_core &>/dev/null
+    # load systemd.sh
+    # is_new_install=1
+    # install_service $is_core &>/dev/null
 
     # create condf dir
     mkdir -p $is_conf_dir
